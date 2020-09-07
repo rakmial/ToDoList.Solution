@@ -40,7 +40,7 @@ namespace ToDoList.Tests
       Assert.AreEqual(updatedDescription, result);
     }
     [TestMethod]    
-    public void Remove_RemoveItemFromList_ItemList()
+    public void Remove_RemoveItemFromList_Void()
     {
       string firstDescription = "Wash the dog";
       string secondDescription = "Buy frisbee";
@@ -70,6 +70,18 @@ namespace ToDoList.Tests
       List<Item> newList = new List<Item> {firstItem,secondItem};
 
       CollectionAssert.AreEqual(newList, Item.GetAll());
+    }
+    [TestMethod]
+    public void GetPretty_ReturnsFormattedNumberedItemList_String()
+    {
+      string firstDescription = "Wash the dog";
+      string secondDescription = "Buy frisbee";
+      Item firstItem = new Item(firstDescription);
+      Item secondItem = new Item(secondDescription);
+
+      prettyGet = Item.GetPretty();
+
+      Assert.AreEqual(prettyGet, $"1. {firstDescription}\n2. {secondDescription}");
     }
   }
 }
