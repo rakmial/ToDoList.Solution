@@ -13,7 +13,11 @@ namespace ToDoList.Models
       Description = description;
       _instances.Add(this);
     }
-
+    public static List<Item> Remove(int i)
+    {
+      _instances.RemoveAt(i-1);
+      return _instances;
+    }
     public static List<Item> GetAll()
     {
       return _instances;
