@@ -33,5 +33,17 @@ namespace ToDoList.Models
     {
       _instances.Clear();
     }
+
+    public static string GetPretty()
+    {
+      string rv = "";
+      int listNumber = 1;
+      for (int i = 0; i < _instances.Count; i++)
+      {
+        rv = rv + $"{listNumber}. {_instances[i].Description}\n";
+        listNumber++;
+      }
+      return rv;
+    }
   }
 }

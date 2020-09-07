@@ -79,9 +79,9 @@ namespace ToDoList.Tests
       Item firstItem = new Item(firstDescription);
       Item secondItem = new Item(secondDescription);
 
-      prettyGet = Item.GetPretty();
+      string prettyGet = Item.GetPretty();
 
-      Assert.AreEqual(prettyGet, $"1. {firstDescription}\n2. {secondDescription}");
+      Assert.AreEqual($"1. {firstDescription}\n2. {secondDescription}\n", prettyGet);
     }
   }
 }
