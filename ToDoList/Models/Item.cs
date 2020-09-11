@@ -5,6 +5,7 @@ namespace ToDoList.Models
   public class Item
   {
     public string Description { get; set; }
+    public string Priority { get; set; }
     
     private static List<Item> _instances = new List<Item> {};
 
@@ -13,6 +14,12 @@ namespace ToDoList.Models
       Description = description;
       _instances.Add(this);
     }
+    public Item(string description, int priority)
+      : this(description)
+    {
+      Priority = priority;
+    }
+
     public static void Remove(int i)
     {
       //if (_instances[i-1])
